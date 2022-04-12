@@ -96,7 +96,7 @@ class SWAPIService: WebService {
                                                         homeworld: "none")
                         peopleGroup.enter()
                         detailGroup.enter()
-                        self.getPlanet(url: planetURL) { planet in
+                        self.getEntity(url: planetURL) { (planet: Planet) in
                             viewModel.homeworld = planet.name
                             detailGroup.leave()
                         }
@@ -104,7 +104,7 @@ class SWAPIService: WebService {
                         if let URLString = creature.spacesUrl.first,
                            let speciesURL = URL(string: URLString) {
                             detailGroup.enter()
-                            self.getSpecies(url: speciesURL) { (species) in
+                            self.getEntity(url: speciesURL) { (species: Species) in
                                 viewModel.species = species.name
                                 detailGroup.leave()
                             }
@@ -129,33 +129,15 @@ class SWAPIService: WebService {
         }
     }
     
-    private func getPlanet(url: URL?, completion: @escaping (Planet) -> ()) {
+    private func getEntity<T: Decodable>(url: URL?, completion: @escaping (T) -> ()) {
         guard let url = url else { return }
         
         requestData(from: url) { result in
             switch result {
             case .success(let data):
                 do {
-                    let planet = try JSONDecoder().decode(Planet.self, from: data)
-                    completion(planet)
-                } catch {
-                    debugPrint(error)
-                }
-            case .failure(let error):
-                debugPrint(error)
-            }
-        }
-    }
-    
-    private func getSpecies(url: URL?, completion: @escaping (Species) -> ()) {
-        guard let url = url else { return }
-        
-        requestData(from: url) { result in
-            switch result {
-            case .success(let data):
-                do {
-                    let species = try JSONDecoder().decode(Species.self, from: data)
-                    completion(species)
+                    let entity = try JSONDecoder().decode(T.self, from: data)
+                    completion(entity)
                 } catch {
                     debugPrint(error)
                 }
