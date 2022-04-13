@@ -36,11 +36,3 @@ struct People: Decodable {
         case homeWorldUrl = "homeworld"
     }
 }
-
-struct Planet: Decodable {
-    let name: String
-}
-
-struct Species: Decodable {
-    let name: String
-}

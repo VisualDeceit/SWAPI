@@ -20,6 +20,8 @@
 		1B7893EA2803029F00E830AE /* SWAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7893E92803029F00E830AE /* SWAPI.swift */; };
 		1B7893EF280304F100E830AE /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7893EE280304F100E830AE /* People.swift */; };
 		1BDA599528051D9800582437 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA599428051D9800582437 /* PeopleViewModel.swift */; };
+		1BDA599A2807259300582437 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA59992807259300582437 /* Planet.swift */; };
+		1BDA599F280725A900582437 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA599E280725A900582437 /* Species.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		1B7893E92803029F00E830AE /* SWAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.swift; sourceTree = "<group>"; };
 		1B7893EE280304F100E830AE /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		1BDA599428051D9800582437 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
+		1BDA59992807259300582437 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		1BDA599E280725A900582437 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +117,7 @@
 				1B7893972802B13400E830AE /* SceneDelegate.swift */,
 				1B7893E12802B98700E830AE /* PeopleViewController.swift */,
 				1B7893E92803029F00E830AE /* SWAPI.swift */,
-				1B7893EE280304F100E830AE /* People.swift */,
-				1BDA599428051D9800582437 /* PeopleViewModel.swift */,
+				1BDA59A3280725EA00582437 /* Models */,
 				1B78939B2802B13400E830AE /* Main.storyboard */,
 				1B7893DA2802B47700E830AE /* PeopleCell.swift */,
 				1B7893DB2802B47700E830AE /* PeopleCell.xib */,
@@ -141,6 +144,17 @@
 				1B7893B92802B13700E830AE /* Info.plist */,
 			);
 			path = SWAPIUITests;
+			sourceTree = "<group>";
+		};
+		1BDA59A3280725EA00582437 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B7893EE280304F100E830AE /* People.swift */,
+				1BDA599E280725A900582437 /* Species.swift */,
+				1BDA59992807259300582437 /* Planet.swift */,
+				1BDA599428051D9800582437 /* PeopleViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,9 +291,11 @@
 				1B7893E22802B98700E830AE /* PeopleViewController.swift in Sources */,
 				1B7893DC2802B47700E830AE /* PeopleCell.swift in Sources */,
 				1B7893962802B13400E830AE /* AppDelegate.swift in Sources */,
+				1BDA599A2807259300582437 /* Planet.swift in Sources */,
 				1B7893EA2803029F00E830AE /* SWAPI.swift in Sources */,
 				1BDA599528051D9800582437 /* PeopleViewModel.swift in Sources */,
 				1B7893EF280304F100E830AE /* People.swift in Sources */,
+				1BDA599F280725A900582437 /* Species.swift in Sources */,
 				1B7893982802B13400E830AE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
